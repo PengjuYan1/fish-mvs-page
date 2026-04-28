@@ -30,11 +30,25 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.08;
 controls.enablePan = true;
 controls.screenSpacePanning = true;
-controls.panSpeed = 0.9;
+controls.panSpeed = 1.35;
 controls.enableZoom = true;
 controls.zoomSpeed = 1.0;
 controls.rotateSpeed = 0.85;
-controls.mouseButtons.MIDDLE = THREE.MOUSE.PAN;
+controls.mouseButtons = {
+  LEFT: THREE.MOUSE.ROTATE,
+  MIDDLE: THREE.MOUSE.DOLLY,
+  RIGHT: THREE.MOUSE.PAN,
+};
+
+renderer.domElement.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
+});
+
+renderer.domElement.addEventListener('mousedown', (event) => {
+  if (event.button === 2) {
+    event.preventDefault();
+  }
+});
 
 scene.add(new THREE.AmbientLight(0xffffff, 1.55));
 
