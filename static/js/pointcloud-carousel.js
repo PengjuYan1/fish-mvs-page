@@ -28,10 +28,13 @@ canvasMount.appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
-controls.enablePan = false;
+controls.enablePan = true;
+controls.screenSpacePanning = true;
+controls.panSpeed = 0.9;
 controls.enableZoom = true;
 controls.zoomSpeed = 1.0;
 controls.rotateSpeed = 0.85;
+controls.mouseButtons.MIDDLE = THREE.MOUSE.PAN;
 
 scene.add(new THREE.AmbientLight(0xffffff, 1.55));
 
