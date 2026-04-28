@@ -1,80 +1,64 @@
-# Academic Project Page Template
+# Fish-MVS Project Page
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+This repository hosts the public project page for the paper:
 
-A clean, responsive template for academic project pages.
+**Non-contact body length measurement and biomass estimation of grouper via underwater multi-view 3D reconstruction**
 
+The page provides an interactive three.js-based point-cloud viewer for qualitative comparison of reconstruction results on a real grouper aquaculture scene captured with a 12-view semi-circular camera system.
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Live Page
 
+After GitHub Pages is enabled, the site is available at:
 
+`https://pengjuyan1.github.io/fish-mvs-page/`
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## Repository Structure
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+- `index.html`: main project page
+- `static/css/pointcloud-showcase.css`: custom page styling
+- `static/js/pointcloud-carousel.js`: three.js point-cloud viewer and carousel logic
+- `static/data/`: point-cloud files used by the viewer
+- `static/vendor/three/`: local three.js runtime dependencies
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## Current Viewer Content
 
-## What's New
+The viewer loads the following point-cloud files directly by filename:
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+- `static/data/ours.ply`
+- `static/data/acmh.ply`
+- `static/data/acmm.ply`
+- `static/data/acmp.ply`
+- `static/data/acmmp.ply`
 
-## Components
+These files are shown without additional display-side geometric cleanup.
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+## Local Preview
 
-## Customization
+You can preview the page locally with a simple static server:
 
-The HTML file has TODO comments showing what to replace:
+```bash
+cd /home/ypj/UnderWaterMVSGaussian/Academic-project-page-template
+python3 -m http.server 8018
+```
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+Then open:
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
+`http://127.0.0.1:8018/`
 
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
+## Deployment
 
-## Tips
+This site is intended to be deployed with GitHub Pages from the `main` branch root.
 
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+GitHub repository:
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+`https://github.com/PengjuYan1/fish-mvs-page`
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+## Data Link
+
+The project page currently points to the public dataset release here:
+
+`https://doi.org/10.6084/m9.figshare.32109580`
+
+## Acknowledgment
+
+This page was initially adapted from the Academic Project Page Template and then simplified into a dedicated point-cloud showcase for reviewer-facing presentation.
