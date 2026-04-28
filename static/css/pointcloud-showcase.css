@@ -1,0 +1,238 @@
+:root {
+  --showcase-bg: linear-gradient(180deg, #f8fbff 0%, #ffffff 24%, #f8fbff 100%);
+  --showcase-panel: rgba(255, 255, 255, 0.96);
+  --showcase-line: rgba(103, 122, 147, 0.18);
+  --showcase-ink: #1f3552;
+  --showcase-muted: #5f7592;
+  --showcase-accent: #0e7490;
+  --showcase-accent-soft: rgba(14, 116, 144, 0.10);
+  --showcase-shadow: 0 18px 45px rgba(16, 31, 56, 0.08);
+}
+
+body {
+  background: var(--showcase-bg);
+}
+
+.project-hero {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(14, 116, 144, 0.10), transparent 24%),
+    radial-gradient(circle at 88% 6%, rgba(37, 99, 235, 0.08), transparent 26%),
+    transparent;
+}
+
+.hero-kicker {
+  margin-bottom: 0.85rem;
+  color: var(--showcase-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-summary {
+  max-width: 880px;
+  margin: 0 auto 1.75rem;
+  color: var(--showcase-muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.publication-meta {
+  margin: 1.1rem 0 1.35rem;
+}
+
+.publication-authors-line {
+  margin: 0;
+  color: #2f97ff;
+  font-size: clamp(1.22rem, 2.15vw, 1.72rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.authors-row {
+  display: block;
+}
+
+.publication-affiliation-line {
+  margin: 0.35rem 0 0;
+  color: #4a3d33;
+  font-size: clamp(1.12rem, 1.95vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.32;
+}
+
+.showcase-section {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.showcase-section .container.is-max-desktop {
+  max-width: 1360px !important;
+  width: min(96vw, 1360px);
+}
+
+.showcase-stage {
+  padding: 0.2rem 0 0.6rem;
+}
+
+.showcase-panel {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.showcase-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.centered-head {
+  justify-content: center;
+  text-align: center;
+}
+
+.showcase-title-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.showcase-title-block {
+  text-align: center;
+}
+
+.showcase-title {
+  margin-bottom: 0;
+  color: var(--showcase-ink);
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.showcase-subtitle {
+  max-width: 760px;
+  margin: 0.65rem auto 0;
+  color: var(--showcase-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.panel-label {
+  margin: 0 0 0.45rem;
+  color: var(--showcase-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.panel-title,
+.control-title,
+.carousel-title {
+  margin-bottom: 0;
+  color: var(--showcase-ink);
+}
+
+.viewer-shell {
+  position: relative;
+  min-height: 700px;
+  margin-top: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(17, 32, 54, 0.08);
+}
+
+.viewer-shell-minimal {
+  border: none;
+}
+
+.viewer-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.viewer-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--showcase-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: rgba(255, 255, 255, 0.76);
+  z-index: 2;
+}
+
+.viewer-loading.is-hidden {
+  display: none;
+}
+
+.abstract-copy {
+  color: var(--showcase-muted);
+}
+
+.carousel-dots-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 1rem;
+}
+
+.model-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.72rem;
+}
+
+.model-name-label {
+  margin: 0.9rem 0 0;
+  color: var(--showcase-ink);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.carousel-dot {
+  width: 11px;
+  height: 11px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(129, 145, 168, 0.34);
+  cursor: pointer;
+  transition: transform 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.carousel-dot:hover {
+  transform: scale(1.15);
+  background: rgba(14, 116, 144, 0.48);
+}
+
+.carousel-dot.is-selected {
+  background: var(--showcase-accent);
+  box-shadow: 0 0 0 5px rgba(14, 116, 144, 0.12);
+}
+
+@media (max-width: 1023px) {
+  .viewer-shell {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-summary {
+    font-size: 0.98rem;
+  }
+
+  .viewer-shell {
+    min-height: 460px;
+  }
+
+}
