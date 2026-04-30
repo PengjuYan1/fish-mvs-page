@@ -41,6 +41,13 @@ body {
   margin: 1.1rem 0 1.35rem;
 }
 
+.publication-title {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.14;
+}
+
 .publication-authors-line {
   margin: 0;
   color: #2f97ff;
@@ -53,12 +60,30 @@ body {
   display: block;
 }
 
+.aff-mark {
+  font-size: 0.62em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 0.04em;
+}
+
 .publication-affiliation-line {
   margin: 0.35rem 0 0;
   color: #4a3d33;
   font-size: clamp(1.12rem, 1.95vw, 1.6rem);
   font-weight: 500;
   line-height: 1.32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.6rem;
+  row-gap: 0.15rem;
+}
+
+.affiliation-row {
+  display: inline;
+  white-space: nowrap;
 }
 
 .showcase-section {
